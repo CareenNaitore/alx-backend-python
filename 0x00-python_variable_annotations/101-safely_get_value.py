@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
-
-""" more involved type annotation"""
-from typing import Union, Any, Sequence, Mapping, TypeVar
+'''Task 11's module.
+'''
+from typing import Any, Mapping, Union, TypeVar
 
 
 T = TypeVar('T')
+Res = Union[Any, T]
+Def = Union[T, None]
 
 
-def safely_get_value(dct: Mapping, Key: Any,
-                   default:  Union[T, None] = None
-                   ) -> Union[Any, T]:
-    """Safe first element"""
-    if dct:
+def safely_get_value(dct: Mapping, key: Any, default: Def = None) -> Res:
+    '''Retrieves a value from a dict using a given key.
+    '''
+    if key in dct:
         return dct[key]
     else:
         return default
