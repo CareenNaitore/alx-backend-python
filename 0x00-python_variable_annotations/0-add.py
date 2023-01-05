@@ -3,6 +3,7 @@
 """ adding floats number. """
 
 
-def add(a:float, b:float)  -> float:
-    return a+b
+def add(a: float, b: float) -> float:
+    """add float number"""
 
+    return a+b
